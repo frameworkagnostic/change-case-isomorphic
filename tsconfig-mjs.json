@@ -1,0 +1,44 @@
+{
+  "include": ["src"],
+  "typeAcquisition": {
+    "include": ["jest"]
+  },
+  "compilerOptions": {
+    "allowJs": true,
+    "composite": false,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "inlineSourceMap": false,
+    "lib": ["esnext"],
+    "listEmittedFiles": false,
+    "listFiles": false,
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "traceResolution": false,
+    "rootDir": "src",
+    "outDir": "./dist/mjs",
+    "baseUrl": "src",
+    "module": "esnext",
+    "target": "esnext"
+  },
+  "watchOptions": {
+    "watchFile": "useFsEvents",
+    "watchDirectory": "useFsEvents",
+    "fallbackPolling": "dynamicPriority",
+    "synchronousWatchDirectory": true,
+    "excludeDirectories": [
+      "**/node_modules",
+      ".**",
+      "build",
+      "dist",
+      "__tests__",
+      "**/vitejs**"
+    ],
+    "excludeFiles": ["**.config.**"]
+  }
+}

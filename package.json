@@ -1,0 +1,41 @@
+{
+  "name": "@frameworkagnostic/change-case-isomorphic",
+  "main": "dist/cjs/index.js",
+  "module": "dist/mjs/index.js",
+  "description": "isomorphic version of change-case",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./dist/mjs/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./src/*": {
+      "require": "./src/*",
+      "import": "./src/*"
+    },
+    "./*": {
+      "require": "./dist/cjs/*.js",
+      "import": "./dist/mjs/*.mjs"
+    }
+  },
+  "scripts": {
+    "build": "rm -rf dist && npm run build:cjs && npm run build:mjs",
+    "build:cjs": "npx tsc -p tsconfig-cjs.json",
+    "build:mjs": "npx tsc -p tsconfig-mjs.json"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  },
+  "types": "./dist/cjs/index.d.ts",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frameworkagnostic/change-case-isomorphic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/frameworkagnostic/change-case-isomorphic/issues"
+  },
+  "homepage": "https://github.com/frameworkagnostic/change-case-isomorphic#readme"
+}
